@@ -1,0 +1,8 @@
+{
+  "name": "drive-tv-media-center-client",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {"dev": "vite --host 0.0.0.0", "build": "vite build"},
+  "dependencies": {"@vitejs/plugin-react": "^4.3.4", "lucide-react": "^0.468.0", "qrcode.react": "^4.2.0", "react": "^18.3.1", "react-dom": "^18.3.1", "react-router-dom": "^6.28.1", "vite": "^6.0.5"},
+  "devDependencies": {}
+}
