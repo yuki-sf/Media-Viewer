@@ -17,3 +17,64 @@
 .mobile-image-actions .primary-btn,.mobile-image-actions .secondary-btn{padding:10px 12px;font-size:10px}
 .mobile-image-hint{font-size:9px;line-height:1.5;color:#727986;text-align:center;margin:0}
 @media(max-width:390px){.mobile-image-actions{justify-content:center}.mobile-image-actions>span{width:100%;text-align:center}.mobile-image-actions .primary-btn,.mobile-image-actions .secondary-btn{flex:1}}
+
+/* Immersive movie player: use the full viewport, with an explicit browser-fullscreen control. */
+.player-overlay{padding:0;background:#000;overflow:hidden}
+.player-top{position:absolute;z-index:2;top:0;left:0;right:0;padding:18px 24px;background:linear-gradient(180deg,rgba(0,0,0,.82),rgba(0,0,0,0));min-height:76px;box-sizing:border-box}
+.player-top h3{max-width:72vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.player-actions{display:flex;align-items:center;gap:10px}
+.fullscreen-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid #ffffff55;border-radius:8px;background:#17191dcc;color:#fff;padding:10px 13px;font-size:12px;font-weight:600}
+.fullscreen-btn:hover{background:#30343dcc}
+.player-overlay video.movie-player{display:block;width:100vw;height:100dvh;max-height:100dvh;object-fit:contain;background:#000;margin:0;flex:none}
+.player-overlay video.movie-player:fullscreen{width:100%;height:100%;max-height:none;object-fit:contain;background:#000}
+.player-overlay video.movie-player::-webkit-media-controls{z-index:5}
+@media(max-width:600px){.player-top{padding:14px 12px;min-height:64px}.player-top h3{font-size:14px;max-width:56vw}.fullscreen-btn{padding:9px;font-size:0}.fullscreen-btn svg{width:19px;height:19px}}
+
+
+/* Pairing QR upgrade: large, high-contrast, and easy to scan from the sofa. */
+.pair-banner{
+  position:relative;
+  overflow:visible;
+  padding:clamp(24px,3vw,38px);
+  gap:clamp(24px,4vw,64px);
+  border-color:rgba(197,242,119,.22);
+  background:radial-gradient(ellipse at 92% 10%,rgba(197,242,119,.09),transparent 38%),linear-gradient(115deg,#191e27 0%,#11141a 72%);
+  box-shadow:0 18px 50px rgba(0,0,0,.18);
+}
+.pair-copy{gap:18px;max-width:780px}
+.pair-icon{width:54px;height:54px;flex-shrink:0;border:1px solid rgba(197,242,119,.2);border-radius:16px;background:rgba(197,242,119,.09);color:#c5f277;display:grid;place-items:center}
+.pair-copy h3{font-size:clamp(18px,1.7vw,23px);letter-spacing:-.4px}
+.pair-copy p{font-size:clamp(13px,1vw,15px);max-width:560px;line-height:1.65}
+.pair-copy small{font-size:11px;line-height:1.6;color:#9299a5}
+.qr-wrap{padding:15px 15px 12px;gap:8px;border-radius:18px;box-shadow:0 10px 32px rgba(0,0,0,.32);outline:1px solid rgba(255,255,255,.7);outline-offset:4px}
+.qr-wrap svg{display:block;width:260px;height:260px;max-width:none;image-rendering:pixelated}
+.qr-wrap span{font-size:11px;font-weight:800;letter-spacing:2px;color:#111827}
+.qr-wrap small{font-size:10px;color:#525866;text-align:center;white-space:nowrap}
+.primary-btn,.secondary-btn,.icon-btn,.media-card,.mobile-file,.fullscreen-btn{transition:transform .18s ease,border-color .18s ease,background .18s ease,box-shadow .18s ease}
+.primary-btn{box-shadow:0 7px 22px rgba(197,242,119,.12)}
+.primary-btn:hover{transform:translateY(-1px);box-shadow:0 10px 28px rgba(197,242,119,.2)}
+.secondary-btn:hover,.icon-btn:hover{border-color:#c5f277;transform:translateY(-1px)}
+.media-card{overflow:hidden}
+.media-card:hover{transform:translateY(-3px);border-color:rgba(197,242,119,.42);box-shadow:0 14px 32px rgba(0,0,0,.2)}
+.searchbox:focus-within{border-color:rgba(197,242,119,.55);box-shadow:0 0 0 3px rgba(197,242,119,.07)}
+@media(max-width:900px){
+  .pair-banner{align-items:center}
+  .qr-wrap{padding:11px 11px 9px}
+  .qr-wrap svg{width:210px;height:210px}
+}
+@media(max-width:600px){
+  .pair-banner{align-items:center;gap:14px;padding:16px}
+  .pair-copy{gap:10px}
+  .pair-copy h3{font-size:14px}
+  .pair-copy p{font-size:10px}
+  .pair-copy small{font-size:9px}
+  .pair-icon{width:36px;height:36px;border-radius:11px}
+  .qr-wrap{padding:8px 8px 7px;gap:5px}
+  .qr-wrap svg{width:120px;height:120px}
+  .qr-wrap span{font-size:8px;letter-spacing:1px}
+  .qr-wrap small{font-size:7px;white-space:normal}
+}
+@media(max-width:390px){
+  .pair-banner{align-items:flex-start}
+  .qr-wrap svg{width:100px;height:100px}
+}
